@@ -288,7 +288,7 @@ nav {
 /* --- HERO SECTION --- */
 #hero {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Nikjee-sticker.jpeg') no-repeat center center/cover; /* <-- Path to your hero image */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('public/static/images/Nikjee-sticker.jpeg') no-repeat center center/cover; /* <-- Path to your hero image */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1041,3 +1041,4 @@ footer {
         height: 100px;
     }
 }
+
