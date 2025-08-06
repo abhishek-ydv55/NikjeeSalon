@@ -1,0 +1,1043 @@
+/* --- VARIABLES & GENERAL STYLES --- */
+:root {
+    --primary-color: #bda06d; /* Elegant Gold */
+    --secondary-color: #495057; /* Mid Grey for borders/accents */
+    --text-color: #e9ecef; /* Brighter Off-White */
+    --heading-color: #ffffff; /* White */
+    --white-color: #212529; /* Charcoal - Main Background */
+    --bg-light: #2c3034; /* Lighter Charcoal */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-color);
+    line-height: 1.7;
+    background-color: var(--white-color); /* Now the dark background */
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading);
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--white-color); /* Fallback, but primary color is stronger */
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    margin: 10px auto 0;
+}
+
+.bg-light {
+    background-color: var(--bg-light);
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--primary-color); /* Gold */
+    color: var(--white-color); /* Dark text for contrast on gold */
+    border-color: var(--primary-color);
+}
+
+.btn-primary:hover {
+    background-color: transparent;
+    color: var(--primary-color);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color); /* Dark text for contrast on gold */
+}
+
+/* Visually-hidden class for accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* --- SPLASH SCREEN --- */
+#splash-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--white-color); /* Match dark theme */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.8s ease-out, visibility 0.8s ease-out;
+}
+
+#splash-screen.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Prevent interaction when hidden */
+}
+
+.splash-logo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover; /* Prevents image distortion */
+    border: 3px solid var(--primary-color); /* Adds a golden border */
+    margin-bottom: 30px;
+    animation: splash-fade-in 1.5s ease-in;
+}
+
+#splash-screen h1 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: var(--heading-color); /* Ensure heading is light */
+    animation: splash-fade-in 1.5s ease-in 0.2s backwards;
+}
+
+.splash-tagline {
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--text-color); /* Ensure tagline is light */
+    animation: splash-fade-in 1.5s ease-in 0.4s backwards;
+}
+
+@keyframes splash-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* --- HEADER & NAVIGATION --- */
+.sticky-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 15px 0;
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    transition: padding 0.3s ease, background-color 0.3s ease;
+}
+
+.sticky-nav.scrolled {
+    background-color: var(--white-color); /* Fully opaque background */
+    padding: 10px 0; /* Reduced padding for a more compact look */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.8rem;
+    color: var(--heading-color);
+}
+
+.logo:hover {
+    color: var(--primary-color);
+    transition: color 0.3s ease; /* Add a smooth transition */
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu li a {
+    font-weight: 500;
+    font-size: 1rem;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-menu li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-menu li a:hover::after,
+.nav-menu li a:focus-visible::after {
+    width: 100%;
+}
+
+/* Tagline below header */
+.header-tagline {
+    text-align: center;
+    padding: 8px 15px;
+    background-color: var(--bg-light);
+    border-top: 1px solid var(--secondary-color);
+    /* Add transitions for a smooth hide effect */
+    transition: all 0.3s ease;
+    max-height: 50px;
+    overflow: hidden;
+}
+
+.sticky-nav.scrolled .header-tagline {
+    /* Styles to hide the tagline smoothly */
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top-width: 0;
+    max-height: 0;
+    opacity: 0;
+}
+.header-tagline p {
+    margin: 0;
+    font-style: italic;
+    color: var(--text-color); /* Use variable for consistency */
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    z-index: 1001;
+}
+
+/* --- KEYFRAME ANIMATIONS --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- HERO SECTION --- */
+#hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/Nikjee-sticker.jpeg') no-repeat center center/cover; /* <-- Path to your hero image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--text-color);
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
+.hero-content h1,
+.hero-content p,
+.hero-content .btn {
+    /* Hide elements by default to prepare for animation */
+    opacity: 0;
+    /* Apply animation */
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Stagger the animations */
+.hero-content p {
+    animation-delay: 0.2s;
+}
+.hero-content .btn {
+    animation-delay: 0.4s;
+}
+
+/* --- ABOUT US SECTION --- */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about-image {
+    width: 100%;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.about-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+/* --- ABOUT US CAROUSEL --- */
+.about-carousel {
+    position: relative;
+    overflow: hidden; /* Hide the other slides */
+    min-height: 400px; /* Avoid layout shifts while images load */
+}
+
+.carousel-inner {
+    display: flex;
+    /* Using a custom cubic-bezier for a smoother feel and will-change for performance */
+    transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+    will-change: transform;
+}
+
+.carousel-slide {
+    /* Each slide takes full width of the container */
+    flex: 0 0 100%;
+    min-width: 100%;
+    
+    /* Keep original internal layout */
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* --- Carousel Text Animation --- */
+.carousel-slide .about-text {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    /* Delay the animation until after the slide has moved */
+    transition-delay: 0.1s;
+}
+
+.carousel-slide.active .about-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.carousel-btn {
+    /* Position is now handled by the container */
+    position: static;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    color: var(--heading-color);
+    font-size: 1.5rem;
+    cursor: pointer;
+    width: 50px; /* Slightly larger for better touch target */
+    height: 50px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+
+.carousel-nav-container {
+    position: absolute;
+    /* Move up slightly to make space for dots */
+    bottom: 50px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+/* --- Carousel Dots --- */
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px; /* Spacing between dots */
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--secondary-color); /* Use theme color for non-active dots */
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active, .dot:hover {
+    background-color: var(--primary-color);
+    transform: scale(1.1);
+}
+/* --- SERVICES SECTION --- */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--white-color);
+    padding: 40px 30px;
+    text-align: center;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover .service-icon {
+    transform: scale(1.1);
+}
+
+.service-icon {
+    /* Removed font-size and color as we are now using images */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+    /* Center the image within the container */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 140px; /* Adjust height for the new rectangular image */
+}
+
+.service-icon img {
+    width: 300px;  /* Made wider for a rectangular look */
+    height: 180px; /* Increased height */
+    object-fit: cover;
+    border-radius: var(--border-radius); /* Use theme's border-radius for rounded corners */
+    border: 3px solid var(--secondary-color); /* Add a subtle border */
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+/* --- GALLERY SECTION --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* --- 3D ROTATING CAROUSEL --- */
+@keyframes rotate-carousel {
+    from { transform: rotateY(0deg); }
+    to { transform: rotateY(360deg); }
+}
+
+.carousel-3d-container {
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.carousel-3d-scene {
+    position: relative;
+    width: 210px; /* Width of one item */
+    height: 250px; /* Height of one item */
+    perspective: 1000px;
+}
+
+.carousel-3d {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotate-carousel 30s linear infinite; /* Slower rotation for more items */
+}
+
+.carousel-3d-container:hover .carousel-3d {
+    animation-play-state: paused;
+}
+
+.carousel-3d-item {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.carousel-3d-item:hover {
+    transform: scale(1.05); /* Optional hover effect on individual items */
+}
+
+.carousel-3d-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Optional: add a reflection */
+    -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+}
+
+/* Positioning each item in the circle */
+/* The translateZ value is the radius of the carousel. Increased for a wider look. */
+/* Angle is 360 / 8 items = 45deg */
+.carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(350px); }
+.carousel-3d-item:nth-child(2) { transform: rotateY(45deg) translateZ(350px); }
+.carousel-3d-item:nth-child(3) { transform: rotateY(90deg) translateZ(350px); }
+.carousel-3d-item:nth-child(4) { transform: rotateY(135deg) translateZ(350px); }
+.carousel-3d-item:nth-child(5) { transform: rotateY(180deg) translateZ(350px); }
+.carousel-3d-item:nth-child(6) { transform: rotateY(225deg) translateZ(350px); }
+.carousel-3d-item:nth-child(7) { transform: rotateY(270deg) translateZ(350px); }
+.carousel-3d-item:nth-child(8) { transform: rotateY(315deg) translateZ(350px); }
+
+
+/* --- LIGHTBOX STYLES --- */
+.lightbox {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9998; /* Below splash screen, above everything else */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.lightbox.active {
+    display: flex;
+    animation: splash-fade-in 0.5s ease; /* Re-use fade-in animation */
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightbox-image {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: var(--border-radius);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+    /* Add transition for smooth animation */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.lightbox-caption-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Space between caption and button */
+    margin-top: 15px;
+    /* Add transition for smooth animation */
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.lightbox-caption {
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-align: center;
+    max-width: 700px;
+    line-height: 1.6;
+    margin: 0; /* Reset margin as container handles spacing */
+}
+
+/* Class to trigger fade-out/in animation */
+.lightbox-image.loading,
+.lightbox-caption-container.loading {
+    opacity: 0;
+    transform: scale(0.97);
+}
+
+.lightbox-book-btn {
+    /* Position the button at the bottom of the lightbox viewport */
+    position: absolute;
+    bottom: 30px; /* Space from the bottom edge */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999; /* Ensure it's on the same layer as the close button */
+
+    /* Original styling */
+    padding: 10px 24px;
+    font-size: 0.9rem;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    color: #fff;
+    font-size: 45px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 9999;
+}
+
+.lightbox-close:hover {
+    color: var(--primary-color);
+}
+
+/* --- Lightbox Navigation --- */
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--white-color);
+    font-size: 2rem;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+    z-index: 10000; /* Above the image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* --- PRICING SECTION --- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.price-card {
+    background: var(--white-color);
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    text-align: center;
+    border-top: 5px solid var(--primary-color);
+}
+
+.price-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.price span {
+    font-size: 2.5rem;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.price-card ul {
+    margin-bottom: 30px;
+}
+
+.price-card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+.price-card ul li:last-child {
+    border-bottom: none;
+}
+
+.price-footer {
+    text-align: center;
+}
+
+/* --- TESTIMONIALS SECTION --- */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.testimonial-card {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--primary-color);
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.testimonial-card cite {
+    font-weight: 700;
+    font-style: normal;
+    color: var(--heading-color);
+}
+
+/* --- CONTACT SECTION --- */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    background: var(--white-color);
+    padding: 50px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+}
+
+.contact-form h3, .contact-info h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+#contact-form input, #contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 8px;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    background-color: var(--bg-light);
+    color: var(--text-color);
+}
+
+#contact-form button {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.contact-info p {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-info i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.map-container {
+    margin-top: 20px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+/* Styling for the new clickable phone/whatsapp links */
+.contact-info p a {
+    color: inherit; /* Make link text match the color of the address text */
+    text-decoration: none;
+    display: inline-flex; /* Use flex to align icon and text inside the link */
+    align-items: center;
+    gap: 15px; /* Create space between the icon and text, matching the address line */
+    transition: color 0.3s ease;
+}
+
+.contact-info p a:hover {
+    color: var(--primary-color); /* On hover, change the text color to the theme's primary color */
+}
+
+/* --- FOOTER --- */
+footer {
+    background-color: #121212; /* A very dark base for the footer */
+    color: #ccc;
+    padding: 60px 0 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.footer-about, .footer-social {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-content h4 {
+    color: var(--heading-color);
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.footer-social a {
+    color: #ccc;
+    font-size: 1.2rem;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: var(--primary-color);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+}
+
+/* --- BACK TO TOP BUTTON --- */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+    transform: translateY(20px);
+}
+
+#back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* --- RESPONSIVE DESIGN & MOBILE NAV --- */
+@media (max-width: 992px) {
+    .about-content, .contact-wrapper, .carousel-slide {
+        grid-template-columns: 1fr;
+    }
+    .carousel-slide {
+        text-align: center;
+    }
+    .about-image {
+        max-width: 400px;
+        margin: 0 auto 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* --- Responsive 3D Carousel --- */
+    .carousel-3d-container {
+        height: 250px;
+    }
+    .carousel-3d-scene {
+        width: 180px;
+        height: 220px;
+        perspective: 800px;
+    }
+    /* Responsive positioning for 8 items */
+    .carousel-3d-item:nth-child(1) { transform: rotateY(0deg) translateZ(220px); }
+    .carousel-3d-item:nth-child(2) { transform: rotateY(45deg) translateZ(220px); }
+    .carousel-3d-item:nth-child(3) { transform: rotateY(90deg) translateZ(220px); }
+    .carousel-3d-item:nth-child(4) { transform: rotateY(135deg) translateZ(220px); }
+    .carousel-3d-item:nth-child(5) { transform: rotateY(180deg) translateZ(220px); }
+    .carousel-3d-item:nth-child(6) { transform: rotateY(225deg) translateZ(220px); }
+    .carousel-3d-item:nth-child(7) { transform: rotateY(270deg) translateZ(220px); }
+    .carousel-3d-item:nth-child(8) { transform: rotateY(315deg) translateZ(220px); }
+}
+
+@media (max-width: 768px) {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        flex-direction: column;        
+        background-color: rgba(33, 37, 41, 0.98); /* Corresponds to the new dark background */
+        backdrop-filter: blur(5px);
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        transition: left 0.4s ease-in-out;
+        z-index: 1000;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu li a {
+        font-size: 1.5rem;
+    }
+    
+    nav .btn-primary {
+        display: none; /* Hide book now button in nav on mobile */
+    }
+
+    .hamburger { /* This rule is inside a media query to override the default 'display: none' */
+        display: block;
+        color: var(--heading-color);
+        z-index: 1001; /* Ensure it's above the menu */
+    }
+
+    .hamburger .fa-times {
+        display: none;
+    }
+
+    .hamburger.active .fa-bars {
+        display: none;
+    }
+
+    .hamburger.active .fa-times {
+        display: block;
+    }
+
+    .hamburger.active {
+        color: var(--primary-color); /* Style the active button state */
+    }
+
+    .hero-content h1 {
+        font-size: 2.8rem;
+    }
+
+    .section-padding {
+        padding: 60px 0;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .contact-wrapper {
+        padding: 30px 20px;
+    }
+
+    footer .footer-content {
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #splash-screen h1 {
+        font-size: 2rem;
+    }
+
+    .splash-logo {
+        width: 100px;
+        height: 100px;
+    }
+}

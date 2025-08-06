@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nikjee Family Salon - Best Family Salon in Lake Town, Kolkata</title>
+    <meta name="description" content="Nikjee Family Salon offers top-tier hair and beauty services in Lake Town, Kolkata. From hair spa and coloring to manicures and pedicures, we provide a relaxing and professional experience.">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/logo.jpg">
+    <link rel="icon" type="image/jpg" sizes="32x32" href="images/logo.jpg">
+    <link rel="icon" type="image/jpg" sizes="16x16" href="images/logo.jpg">
+    <link rel="manifest" href="images/logo.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- AOS - Animate on Scroll Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Custom Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Splash Screen -->
+    <div id="splash-screen">
+        <img src="images/logo.jpg" alt="Nikjee Family Salon Logo" class="splash-logo">
+        <h1>Welcome to Nikjee Family Salon</h1>
+        <p class="splash-tagline">Relax. Refresh. Radiate.</p>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header class="sticky-nav">
+        <div class="container">
+            <nav>
+                <a href="index.html" class="logo">
+                    Nikjee Family Salon
+                </a>
+                <!-- Navigation Menu -->
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Book Now</a>
+                <!-- Hamburger Icon for Mobile -->
+                <button class="hamburger" aria-label="Open navigation menu" aria-controls="nav-menu" aria-expanded="false">
+                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </nav>
+            <div class="header-tagline">
+                <p>Expert Touch for Every Treatment</p>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Elegance & Style, Redefined.</h1>
+                <p>Welcome to Nikjee Family Salon, your sanctuary for beauty and relaxation in the heart of Kolkata.</p>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <h2 class="section-title">Welcome to Your Beauty Sanctuary</h2>
+                <!-- About Us Carousel -->
+                <div class="about-carousel js-carousel" data-aos="fade-up">
+                    <div class="carousel-inner">
+                        <!-- Slide 1: Passion -->
+                        <div class="carousel-slide">
+                            <img src="/images/hall-2.jpeg" alt="Interior of Nikjee Family Salon" class="about-image" loading="lazy">
+                            <div class="about-text">
+                                <h3 style="text-align: center">A Passion for Perfection</h3>
+                                <p>Founded with a passion for style and a commitment to client satisfaction, Nikjee Family Salon is more than just a salon—it's a community in the heart of Lake Town. We believe in providing a warm, welcoming atmosphere where you can unwind while our expert stylists work their magic. Our mission is to make you look and feel your absolute best, every time you visit.</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2: Team -->
+                        <div class="carousel-slide">
+                            <img src="/images/hair-cutting.jpeg" alt="Our expert team at work" class="about-image" loading="lazy">
+                            <div class="about-text">
+                                <h3 style="text-align: center">Our Expert Team</h3>
+                                <p>Our stylists are the heart of Nikjee. With years of experience and continuous training in the latest trends and techniques, they are dedicated to crafting the perfect look for you. We listen to your needs and provide personalized consultations to ensure you leave feeling confident and radiant.</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3: Hygiene -->
+                        <div class="carousel-slide">
+                            <img src="/images/haircut-area-2.jpeg" alt="Sanitized and clean salon station" class="about-image" loading="lazy">
+                            <div class="about-text">
+                                <h3 style="text-align: center">Commitment to Hygiene & Safety</h3>
+                                <p>Your safety is our top priority. We adhere to the strictest hygiene standards, with sanitized tools, clean stations, and a pristine environment, ensuring a safe and comfortable experience for every client.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Carousel Navigation -->
+                    <div class="carousel-nav-container">
+                        <button class="carousel-btn prev" aria-label="Previous Slide">&#10094;</button>
+                        <button class="carousel-btn next" aria-label="Next Slide">&#10095;</button>
+                    </div>
+                    <!-- Carousel Dots -->
+                    <div class="carousel-dots">
+                        <button class="dot active" data-slide-to="0" aria-label="Go to slide 1"></button>
+                        <button class="dot" data-slide-to="1" aria-label="Go to slide 2"></button>
+                        <button class="dot" data-slide-to="2" aria-label="Go to slide 3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Our Services</h2>
+                <div class="service-grid">
+                    <!-- Service Item 1 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="service-icon"><img src="images/hair-spa.jpg" alt="Hair Spa Treatment" loading="lazy"></div>
+                        <h3>Hair Spa</h3>
+                        <p>Rejuvenate your hair with our deep conditioning and relaxing spa treatments.</p>
+                    </div>
+                    <!-- Service Item 2 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="service-icon"><img src="images/coloring.jpg" alt="Hair Coloring Service" loading="lazy"></div>
+                        <h3>Hair Coloring</h3>
+                        <p>From global colors to trendy balayage, let our experts craft your perfect shade.</p>
+                    </div>
+                    <!-- Service Item 3 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="service-icon"><img src="images/hair-protein.jpg" alt="Hair Protein Treatment" loading="lazy"></div>
+                        <h3>Protein Treatment</h3>
+                        <p>Strengthen and restore your hair's natural shine with our protein therapies.</p>
+                    </div>
+                    <!-- Service Item 4 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                        <div class="service-icon"><img src="images/manicure.jpg" alt="Manicure Service" loading="lazy"></div>
+                        <h3>Manicure</h3>
+                        <p>Impeccable nail care for beautiful, healthy hands.</p>
+                    </div>
+                    <!-- Service Item 5 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="500">
+                        <div class="service-icon"><img src="images/pedicure.jpg" alt="Pedicure Service" loading="lazy"></div>
+                        <h3>Pedicure</h3>
+                        <p>Relax and refresh with our luxurious pedicure services.</p>
+                    </div>
+                    <!-- Service Item 6 -->
+                    <div class="service-card" data-aos="fade-up" data-aos-delay="600">
+                        <div class="service-icon"><img src="images/bridal-makeup.jpg" alt="Bridal Makeup Service" loading="lazy"></div>
+                        <h3>Bridal & Party Makeup</h3>
+                        <p>Look stunning on your special day with our professional bridal packages.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="section-padding">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Style Gallery</h2>
+                <!-- 3D Carousel -->
+                <div class="carousel-3d-container" data-aos="fade-up">
+                    <div class="carousel-3d-scene">
+                        <div class="carousel-3d">
+                            <!-- Item 1 -->
+                            <div class="carousel-3d-item" 
+                                 data-lightbox-src="/images/landscape-image/hair-cutting.jpg"
+                                 data-lightbox-caption="Elegant updos and classic styles for any occasion. Our stylists create timeless looks.">
+                                <img src="/images/landscape-image/hair-cutting.jpg" alt="Salon haircut" loading="lazy">
+                            </div>
+                            <!-- Item 2 -->
+                            <div class="carousel-3d-item" 
+                                 data-lightbox-src="/images/man-cutting.jpg" 
+                                 data-lightbox-caption="Precision cuts for men. We offer modern and classic styles tailored to you.">
+                                <img src="/images/man-cutting.jpg" alt="Salon hairstyle" loading="lazy">
+                            </div>
+                            <!-- Item 3 -->
+                            <div class="carousel-3d-item" 
+                                 data-lightbox-src="/images/lady-cutting.jpg" 
+                                 data-lightbox-caption="Transform your look with a fresh, stylish haircut from our expert team.">
+                                <img src="/images/lady-cutting.jpg" alt="Salon ambiance" loading="lazy">
+                            </div>
+                            <!-- Item 4 -->
+                            <div class="carousel-3d-item" 
+                                 data-lightbox-src="images/coloring.jpg" 
+                                 data-lightbox-caption="Vibrant, professional hair coloring. From subtle highlights to bold new shades.">
+                                <img src="images/coloring.jpg" alt="Client after haircut" loading="lazy">
+                            </div>
+                            <!-- Item 5 -->
+                            <div class="carousel-3d-item" 
+                                 data-lightbox-src="images/hair-spa.jpg" 
+                                 data-lightbox-caption="Relax and rejuvenate with our signature hair spa treatments.">
+                                <img src="images/hair-spa.jpg" alt="Hair spa treatment" loading="lazy">
+                            </div>
+                            <!-- Item 6 -->
+                            <div class="carousel-3d-item" 
+                                 data-lightbox-src="images/manicure.jpg" 
+                                 data-lightbox-caption="Perfectly polished nails with our expert manicure service.">
+                                <img src="images/manicure.jpg" alt="Manicure result" loading="lazy">
+                            </div>
+                            <!-- Item 7 -->
+                            <div class="carousel-3d-item" 
+                                 data-lightbox-src="images/pedicure.jpg" 
+                                 data-lightbox-caption="Luxurious pedicures for happy, beautiful feet.">
+                                <img src="images/pedicure.jpg" alt="Pedicure service" loading="lazy">
+                            </div>
+                            <!-- Item 8 -->
+                            <div class="carousel-3d-item" 
+                                 data-lightbox-src="images/bridal-makeup.jpg" 
+                                 data-lightbox-caption="Stunning bridal makeup to make your special day unforgettable.">
+                                <img src="images/bridal-makeup.jpg" alt="Bridal makeup" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Price List Section -->
+        <section id="pricing" class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Our Packages</h2>
+                <div class="pricing-grid">
+                    <!-- Pricing Card 1 -->
+                    <div class="price-card" data-aos="fade-up" data-aos-delay="100">
+                        <h3>Hair Spa</h3>
+                        <p class="price">starting at <span>₹800</span></p>
+                        <ul>
+                            <li>Deep Conditioning</li>
+                            <li>Scalp Massage</li>
+                            <li>Steam Treatment</li>
+                        </ul>
+                    </div>
+                    <!-- Pricing Card 2 -->
+                    <div class="price-card" data-aos="fade-up" data-aos-delay="200">
+                        <h3>Global Hair Color</h3>
+                        <p class="price">starting at <span>₹2500</span></p>
+                        <ul>
+                            <li>Ammonia-free options</li>
+                            <li>Professional application</li>
+                            <li>Post-color wash & style</li>
+                        </ul>
+                    </div>
+                    <!-- Pricing Card 3 -->
+                    <div class="price-card" data-aos="fade-up" data-aos-delay="300">
+                        <h3>Beauty Combo</h3>
+                        <p class="price">starting at <span>₹1500</span></p>
+                        <ul>
+                            <li>Classic Manicure</li>
+                            <li>Classic Pedicure</li>
+                            <li>Face Cleanup</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="price-footer" data-aos="fade-up">
+                    <p>For a detailed price list, please contact us or visit the salon.</p>
+                    <!-- Optional: Link to a PDF brochure -->
+                    <!-- <a href="/path/to/brochure.pdf" class="btn btn-primary" download>Download Brochure</a> -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="section-padding">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">What Our Clients Say</h2>
+                <div class="testimonial-grid">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                        <p>"An absolutely amazing experience! The staff is incredibly talented and friendly. My hair has never looked better. Highly recommend Nikjee Salon!"</p>
+                        <cite>– Priya S.</cite>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                        <p>"The best salon in Lake Town, hands down. Very hygienic and professional. I'm a regular now for my manicures and pedicures."</p>
+                        <cite>– Anjali M.</cite>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                        <p>"I got a protein treatment done, and the results are fantastic. The stylists really know what they're doing. Great ambiance too."</p>
+                        <cite>– Rohan K.</cite>
+                    </div>
+                </div>
+                 <!-- To embed Google Reviews, you can use a third-party widget. Search for "embed google reviews widget". -->
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-padding bg-light">
+            <div class="container">
+                <h2 class="section-title" data-aos="fade-up">Book Your Appointment</h2>
+                <div class="contact-wrapper">
+                    <div class="contact-form" data-aos="fade-right">
+                        <h3>Send us a Message</h3>
+                        <!-- This form is now handled by script.js to open WhatsApp -->
+                        <form id="contact-form">
+                            <label for="name" class="sr-only">Your Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            <label for="phone" class="sr-only">Your Phone</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Your Phone" required>
+                            <label for="message" class="sr-only">Your Message</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Your Message (e.g., desired service, date)" required></textarea>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info" data-aos="fade-left">
+                        <h3>Contact & Visit Us</h3>
+                        <p><i class="fa-solid fa-map-marker-alt"></i> 1st Floor, 172/1, Block B, Lake Town, Kolkata, South Dumdum, West Bengal 700089</p>
+                        <p><a href="tel:+919564631320"><i class="fa-solid fa-phone"></i> +91 95646 31320</a></p>
+                        <p><a href="https://wa.me/919564631320" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a></p>
+                        <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3683.3995432772576!2d88.40340287550224!3d22.601550531908195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0275351bf642b5%3A0xd0e2f6a061ad1468!2sNikjee%20Family%20Salon%20%7C%20Best%20Family%20Salon%20in%20Lake%20Town%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1754193815252!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Location of Nikjee Family Salon"></iframe>                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Lightbox Structure -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <button class="lightbox-prev" aria-label="Previous image">&#10094;</button>
+        <div class="lightbox-content">
+            <img class="lightbox-image" src="" alt="Enlarged gallery view">
+            <div class="lightbox-caption-container">
+                <p class="lightbox-caption"></p>
+            </div>
+        </div>
+        <button class="lightbox-next" aria-label="Next image">&#10095;</button>
+        <a href="#contact" class="btn btn-primary lightbox-book-btn">Book Now</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <h4>Nikjee Family Salon</h4>
+                    <p>Your destination for premium hair and beauty services in Lake Town, Kolkata.</p>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow Us</h4>
+                    <!-- Replace with your actual social media links -->
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/nikjee_family_salon/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Nikjee Family Salon. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#hero" id="back-to-top-btn" aria-label="Go to top">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- AOS - Animate on Scroll Library -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
